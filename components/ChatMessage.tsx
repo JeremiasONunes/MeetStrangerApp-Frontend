@@ -1,0 +1,29 @@
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import { ChatBubble as DSChatBubble } from '../design-system';
+import { ChatMessage as ChatMessageType } from '../constants/mockData';
+
+interface ChatMessageProps {
+  message: ChatMessageType;
+}
+
+export function ChatMessage({ message }: ChatMessageProps) {
+  const formatTime = (date: Date) => {
+    return date.toLocaleTimeString('pt-BR', { 
+      hour: '2-digit', 
+      minute: '2-digit' 
+    });
+  };
+
+  return (
+    <DSChatBubble
+      message={message.text}
+      position={message.isUser ? 'right' : 'left'}
+      timestamp={formatTime(message.timestamp)}
+      username={message.username}
+      showUsername={!message.isUser}
+    />
+  );
+}
+
+const styles = StyleSheet.create({});

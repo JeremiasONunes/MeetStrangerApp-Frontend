@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { TextInput, View, Text, StyleSheet, TextInputProps } from 'react-native';
-import { Colors } from '../tokens/colors';
+import { Colors } from '../../constants/colors';
 import { Spacing, BorderRadius } from '../tokens/spacing';
 
 interface InputProps extends TextInputProps {
@@ -43,7 +43,7 @@ export function Input({
           error && styles.inputError,
           style,
         ]}
-        placeholderTextColor={Colors.textTertiary}
+        placeholderTextColor={Colors.textSecondary}
         onFocus={handleFocus}
         onBlur={handleBlur}
         {...props}
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 15,
     fontWeight: '500',
-    color: Colors.textSecondary,
+    color: Colors.text,
     marginBottom: Spacing.sm,
   },
   labelFocused: {
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: Spacing.lg,
     paddingVertical: Spacing.md,
     fontSize: 16,
-    color: Colors.textPrimary,
+    color: Colors.text,
     includeFontPadding: false,
     textAlignVertical: 'center',
   },
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
   },
   helperText: {
     fontSize: 13,
-    color: Colors.textTertiary,
+    color: Colors.textSecondary,
     marginTop: Spacing.xs,
     paddingHorizontal: Spacing.xs,
   },

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Alert, KeyboardAvoidingView, Platform } from 'react-native';
+import { View, Text, Alert, KeyboardAvoidingView, Platform, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useAuth } from '../../hooks/useAuth';
 import { Button } from '../../components/Button';
@@ -50,42 +50,50 @@ export default function Register() {
     <KeyboardAvoidingView 
       style={styles.container}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={Platform.OS === 'android' ? -85 : 0}
     >
       <View style={styles.content}>
+        <Image 
+          source={require('../../assets/logo.png')} 
+          style={styles.logo}
+          resizeMode="contain"
+        />
         <Text style={styles.title}>Criar Conta</Text>
         <Text style={styles.subtitle}>Junte-se ao MeetStranger</Text>
 
-        <Input
-          label="Nome de usuário"
-          value={username}
-          onChangeText={setUsername}
-          placeholder="Seu nome de usuário"
-        />
+        <View style={styles.inputContainer}>
+          <Input
+            label="Nome de usuário"
+            value={username}
+            onChangeText={setUsername}
+            placeholder="Seu nome de usuário"
+          />
 
-        <Input
-          label="Email"
-          value={email}
-          onChangeText={setEmail}
-          keyboardType="email-address"
-          autoCapitalize="none"
-          placeholder="seu@email.com"
-        />
+          <Input
+            label="Email"
+            value={email}
+            onChangeText={setEmail}
+            keyboardType="email-address"
+            autoCapitalize="none"
+            placeholder="seu@email.com"
+          />
 
-        <Input
-          label="Senha"
-          value={password}
-          onChangeText={setPassword}
-          secureTextEntry
-          placeholder="Mínimo 6 caracteres"
-        />
+          <Input
+            label="Senha"
+            value={password}
+            onChangeText={setPassword}
+            secureTextEntry
+            placeholder="Mínimo 6 caracteres"
+          />
 
-        <Input
-          label="Confirmar senha"
-          value={confirmPassword}
-          onChangeText={setConfirmPassword}
-          secureTextEntry
-          placeholder="Confirme sua senha"
-        />
+          <Input
+            label="Confirmar senha"
+            value={confirmPassword}
+            onChangeText={setConfirmPassword}
+            secureTextEntry
+            placeholder="Confirme sua senha"
+          />
+        </View>
 
         <Button
           title={loading ? "Criando..." : "Criar Conta"}

@@ -9,8 +9,16 @@ export const loginStyles = StyleSheet.create({
   content: {
     flex: 1,
     paddingHorizontal: 20,
-    paddingTop: 120,
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  logo: {
+    width: 240,
+    height: 240,
+    marginBottom: 24,
+  },
+  inputContainer: {
+    width: '100%',
   },
   title: {
     fontSize: 22,

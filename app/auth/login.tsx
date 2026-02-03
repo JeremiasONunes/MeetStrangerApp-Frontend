@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Alert, KeyboardAvoidingView, Platform } from 'react-native';
+import { View, Text, Alert, KeyboardAvoidingView, Platform, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useAuth } from '../../hooks/useAuth';
 import { Button } from '../../components/Button';
@@ -38,27 +38,35 @@ export default function Login() {
     <KeyboardAvoidingView 
       style={styles.container}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={Platform.OS === 'android' ? -85 : 0}
     >
       <View style={styles.content}>
+        <Image 
+          source={require('../../assets/logo.png')} 
+          style={styles.logo}
+          resizeMode="contain"
+        />
         <Text style={styles.title}>Entrar</Text>
         <Text style={styles.subtitle}>Acesse sua conta no MeetStranger</Text>
 
-        <Input
-          label="Email"
-          value={email}
-          onChangeText={setEmail}
-          keyboardType="email-address"
-          autoCapitalize="none"
-          placeholder="seu@email.com"
-        />
+        <View style={styles.inputContainer}>
+          <Input
+            label="Email"
+            value={email}
+            onChangeText={setEmail}
+            keyboardType="email-address"
+            autoCapitalize="none"
+            placeholder="seu@email.com"
+          />
 
-        <Input
-          label="Senha"
-          value={password}
-          onChangeText={setPassword}
-          secureTextEntry
-          placeholder="Sua senha"
-        />
+          <Input
+            label="Senha"
+            value={password}
+            onChangeText={setPassword}
+            secureTextEntry
+            placeholder="Sua senha"
+          />
+        </View>
 
         <Button
           title={loading ? "Entrando..." : "Entrar"}

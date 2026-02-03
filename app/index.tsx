@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useAuth } from '../hooks/useAuth';
 import { Button } from '../components/Button';
@@ -18,6 +18,11 @@ export default function Welcome() {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
+        <Image 
+          source={require('../assets/logo.png')} 
+          style={styles.logo}
+          resizeMode="contain"
+        />
         <Text style={styles.title}>MeetStranger</Text>
         <Text style={styles.subtitle}>Converse anonimamente com desconhecidos</Text>
         <Text style={styles.description}>

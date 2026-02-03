@@ -14,6 +14,11 @@ export const welcomeStyles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 8,
   },
+  logo: {
+    width: 240,
+    height: 240,
+    marginBottom: 24,
+  },
   title: {
     fontSize: 24,
     fontWeight: 'bold',

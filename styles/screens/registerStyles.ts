@@ -9,8 +9,17 @@ export const registerStyles = StyleSheet.create({
   content: {
     flex: 1,
     paddingHorizontal: 20,
-    paddingTop: 120,
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 60,
+  },
+  logo: {
+    width: 120,
+    height: 120,
+    marginBottom: 16,
+  },
+  inputContainer: {
+    width: '100%',
   },
   title: {
     fontSize: 22,

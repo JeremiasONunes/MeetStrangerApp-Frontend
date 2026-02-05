@@ -12,9 +12,14 @@ import { useRouter, useLocalSearchParams } from 'expo-router';
 
 import { ChatMessage } from '../../components/ChatMessage';
 import { useChat } from '../../hooks/useChat';
-import { chatCategories } from '../../constants/mockData';
 import { Colors } from '../../constants/colors';
 import { chatRoomStyles as styles } from '../../styles/screens/chatRoomStyles';
+
+const categories = [
+  { id: 'filmes', name: 'Filmes', icon: '🎬' },
+  { id: 'jogos', name: 'Jogos', icon: '🎮' },
+  { id: 'series', name: 'Séries', icon: '📺' }
+];
 
 export default function ChatRoom() {
   const router = useRouter();
@@ -23,10 +28,10 @@ export default function ChatRoom() {
   const [messageText, setMessageText] = useState('');
   const flatListRef = useRef<FlatList>(null);
 
-  const { messages, isConnected, sendMessage, findNewPartner } =
-    useChat(category || 'movies');
+  const { messages, isConnected, isMatching, partnerName, sendMessage, findNewPartner } =
+    useChat(category || 'filmes');
 
-  const categoryInfo = chatCategories.find(
+  const categoryInfo = categories.find(
     cat => cat.id === category
   );
 
@@ -61,7 +66,12 @@ export default function ChatRoom() {
             {categoryInfo?.icon} {categoryInfo?.name}
           </Text>
           <Text style={styles.connectionStatus}>
-            {isConnected ? '🟢 1 pessoa conectada' : '🟡 Procurando pessoa...'}
+            {isConnected 
+              ? `🟢 Conversando com ${partnerName}` 
+              : isMatching 
+                ? '🟡 Procurando nova pessoa...' 
+                : '🟡 Procurando pessoa...'
+            }
           </Text>
         </View>
         

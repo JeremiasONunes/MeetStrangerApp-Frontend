@@ -1,8 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, ViewStyle, TextStyle } from 'react-native';
-import { Button as DSButton } from '../design-system';
+import { Colors } from '../constants/colors';
 
-// Wrapper para manter compatibilidade com código existente
 interface ButtonProps {
   title: string;
   onPress: () => void;
@@ -12,19 +11,61 @@ interface ButtonProps {
 }
 
 export function Button({ title, onPress, variant = 'primary', disabled = false, style }: ButtonProps) {
-  // Mapear variantes antigas para novas
-  const dsVariant = variant === 'outline' ? 'ghost' : variant;
-  
   return (
-    <DSButton
-      title={title}
+    <TouchableOpacity
+      style={[
+        styles.base,
+        styles[variant],
+        disabled && styles.disabled,
+        style,
+      ]}
       onPress={onPress}
-      variant={dsVariant as any}
       disabled={disabled}
-      style={style}
-      fullWidth
-    />
+      activeOpacity={0.7}
+    >
+      <Text style={[styles.text, styles[`${variant}Text`]]}>
+        {title}
+      </Text>
+    </TouchableOpacity>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  base: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 24,
+    paddingVertical: 12,
+    borderRadius: 12,
+    minHeight: 48,
+  },
+  primary: {
+    backgroundColor: Colors.primary,
+  },
+  secondary: {
+    backgroundColor: Colors.surface,
+    borderWidth: 1,
+    borderColor: Colors.border,
+  },
+  outline: {
+    backgroundColor: 'transparent',
+    borderWidth: 1,
+    borderColor: Colors.primary,
+  },
+  disabled: {
+    opacity: 0.5,
+  },
+  text: {
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  primaryText: {
+    color: '#FFFFFF',
+  },
+  secondaryText: {
+    color: Colors.text,
+  },
+  outlineText: {
+    color: Colors.primary,
+  },
+});

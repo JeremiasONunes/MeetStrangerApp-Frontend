@@ -1,9 +1,36 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
-import { chatCategories } from '../../constants/mockData';
 import { Button } from '../../components/Button';
 import { chatSelectStyles as styles } from '../../styles/screens/chatSelectStyles';
+
+interface ChatCategory {
+  id: string;
+  name: string;
+  description: string;
+  icon: string;
+}
+
+const categories: ChatCategory[] = [
+  {
+    id: 'filmes',
+    name: 'Filmes',
+    description: 'Converse sobre seus filmes favoritos',
+    icon: '🎬'
+  },
+  {
+    id: 'jogos',
+    name: 'Jogos',
+    description: 'Discuta sobre games e gaming',
+    icon: '🎮'
+  },
+  {
+    id: 'series',
+    name: 'Séries',
+    description: 'Fale sobre suas séries preferidas',
+    icon: '📺'
+  }
+];
 
 export default function ChatSelect() {
   const router = useRouter();
@@ -22,7 +49,7 @@ export default function ChatSelect() {
       </View>
 
       <View style={styles.categories}>
-        {chatCategories.map((category) => (
+        {categories.map((category) => (
           <TouchableOpacity
             key={category.id}
             style={styles.categoryCard}

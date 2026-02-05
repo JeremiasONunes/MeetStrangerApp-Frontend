@@ -17,6 +17,11 @@ export const registerStyles = StyleSheet.create({
     width: 120,
     height: 120,
     marginBottom: 16,
+    shadowColor: '#1E3A8A',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.4,
+    shadowRadius: 12,
+    elevation: 12,
   },
   inputContainer: {
     width: '100%',

@@ -1,44 +1,77 @@
-import React, { useState, useContext, createContext, ReactNode } from 'react';
-import { User, mockUser } from '../constants/mockData';
+import React, { useState, useContext, createContext, ReactNode, useEffect } from 'react';
+import { User } from '../constants/types';
+import { apiService } from '../services/api';
+import { wsService } from '../services/websocket';
 
 interface AuthContextType {
   user: User | null;
   isAuthenticated: boolean;
+  isLoading: boolean;
   login: (email: string, password: string) => Promise<boolean>;
   register: (username: string, email: string, password: string) => Promise<boolean>;
-  logout: () => void;
+  logout: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    checkAuthStatus();
+  }, []);
+
+  const checkAuthStatus = async () => {
+    try {
+      const response = await apiService.getProfile();
+      setUser(response.user);
+      await wsService.connect();
+    } catch (error) {
+      console.log('Not authenticated');
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const login = async (email: string, password: string): Promise<boolean> => {
-    if (email && password) {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      setUser({ ...mockUser, email });
+    try {
+      const response = await apiService.login(email, password);
+      setUser(response.user);
+      await wsService.connect();
       return true;
+    } catch (error) {
+      console.error('Login error:', error);
+      return false;
     }
-    return false;
   };
 
   const register = async (username: string, email: string, password: string): Promise<boolean> => {
-    if (username && email && password) {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      setUser({ ...mockUser, username, email });
+    try {
+      const response = await apiService.register(username, email, password);
+      setUser(response.user);
+      await wsService.connect();
       return true;
+    } catch (error) {
+      console.error('Register error:', error);
+      return false;
     }
-    return false;
   };
 
-  const logout = () => {
-    setUser(null);
+  const logout = async () => {
+    try {
+      await apiService.logout();
+      wsService.disconnect();
+      setUser(null);
+    } catch (error) {
+      console.error('Logout error:', error);
+    }
   };
 
   const value = {
     user,
     isAuthenticated: !!user,
+    isLoading,
     login,
     register,
     logout

@@ -16,6 +16,11 @@ export const loginStyles = StyleSheet.create({
     width: 240,
     height: 240,
     marginBottom: 24,
+    shadowColor: Colors.shadow,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 8,
   },
   inputContainer: {
     width: '100%',
@@ -39,5 +44,6 @@ export const loginStyles = StyleSheet.create({
   loginButton: {
     marginBottom: 12,
     marginTop: 24,
+    borderRadius: 12,
   },
 });

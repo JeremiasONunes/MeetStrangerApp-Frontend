@@ -17,8 +17,7 @@
         "foregroundImage": "./assets/logo.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false,
-      "package": "com.anonymous.meetstrangermobile"
+      "predictiveBackGestureEnabled": false
     },
     "web": {
       "output": "static",

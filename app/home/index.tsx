@@ -17,8 +17,8 @@ export default function Home() {
     router.push('/about/');
   };
 
-  const handleLogout = () => {
-    logout();
+  const handleLogout = async () => {
+    await logout();
     router.replace('/');
   };
 

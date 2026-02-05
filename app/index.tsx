@@ -23,7 +23,6 @@ export default function Welcome() {
           style={styles.logo}
           resizeMode="contain"
         />
-        <Text style={styles.title}>MeetStranger</Text>
         <Text style={styles.subtitle}>Converse anonimamente com desconhecidos</Text>
         <Text style={styles.description}>
           Conecte-se com pessoas do mundo todo de forma segura e anônima.

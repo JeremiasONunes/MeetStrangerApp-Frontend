@@ -1,7 +1,7 @@
 // Configurações da API
 export const API_CONFIG = {
-  BASE_URL: __DEV__ ? 'http://10.112.190.214:3000/api' : 'https://your-production-api.com/api',
-  SOCKET_URL: __DEV__ ? 'http://10.112.190.214:3000' : 'https://your-production-api.com',
+  BASE_URL: 'https://meetstrangerapp-backend.onrender.com/api',
+  SOCKET_URL: 'https://meetstrangerapp-backend.onrender.com',
   TIMEOUT: 10000,
 };
 

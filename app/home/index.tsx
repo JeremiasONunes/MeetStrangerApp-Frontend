@@ -14,7 +14,7 @@ export default function Home() {
   };
 
   const handleAbout = () => {
-    router.push('/about/');
+    router.push('/about');
   };
 
   const handleLogout = async () => {
@@ -26,23 +26,19 @@ export default function Home() {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.welcome}>Olá, {user?.username}!</Text>
-        <Text style={styles.subtitle}>Pronto para conhecer alguém novo?</Text>
+        <Text style={styles.subtitle}>Pronto para se conectar com novas pessoas?</Text>
       </View>
 
       <View style={styles.content}>
         <View style={styles.card}>
           <Text style={styles.cardTitle}>🎭 MeetStranger</Text>
           <Text style={styles.cardDescription}>
-            Converse anonimamente com pessoas do mundo todo. 
+            Converse com pessoas do mundo todo. 
             Escolha um tópico de interesse e comece uma conversa interessante!
           </Text>
         </View>
 
         <View style={styles.features}>
-          <View style={styles.feature}>
-            <Text style={styles.featureIcon}>🔒</Text>
-            <Text style={styles.featureText}>100% Anônimo</Text>
-          </View>
           <View style={styles.feature}>
             <Text style={styles.featureIcon}>🌍</Text>
             <Text style={styles.featureText}>Global</Text>

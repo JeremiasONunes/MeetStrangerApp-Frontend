@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { ChatBubble as DSChatBubble } from '../design-system';
-import { ChatMessage as ChatMessageType } from '../constants/mockData';
+import { ChatMessage as ChatMessageType } from '../constants/types';
 
 interface ChatMessageProps {
   message: ChatMessageType;

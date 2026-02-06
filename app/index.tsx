@@ -23,10 +23,16 @@ export default function Welcome() {
           style={styles.logo}
           resizeMode="contain"
         />
-        <Text style={styles.subtitle}>Converse anonimamente com desconhecidos</Text>
+        <Text style={styles.subtitle}>Conecte-se com pessoas do mundo todo</Text>
         <Text style={styles.description}>
-          Conecte-se com pessoas do mundo todo de forma segura e anônima.
+          Conecte-se com pessoas do mundo todo de forma segura.
           Escolha um tópico e comece a conversar!
+          
+
+        </Text>
+        <Text style={styles.description}>
+          Inspirado em aplicativos de chat como o Omegle.
+
         </Text>
       </View>
       

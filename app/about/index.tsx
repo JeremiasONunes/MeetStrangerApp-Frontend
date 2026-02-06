@@ -19,7 +19,7 @@ export default function About() {
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>🎭 O que é o MeetStranger?</Text>
           <Text style={styles.text}>
-            O MeetStranger é um aplicativo de comunicação anônima que conecta pessoas 
+            O MeetStranger é um aplicativo de comunicação que conecta pessoas 
             do mundo todo através de conversas por texto. Nossa missão é criar um 
             espaço seguro onde você pode conhecer novas perspectivas e fazer conexões 
             genuínas sem julgamentos.
@@ -27,13 +27,11 @@ export default function About() {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>🔒 Privacidade e Anonimato</Text>
+          <Text style={styles.sectionTitle}>🔒 Privacidade</Text>
           <Text style={styles.text}>
             Sua privacidade é nossa prioridade. No MeetStranger:
           </Text>
           <Text style={styles.bulletPoint}>• Não coletamos dados pessoais</Text>
-          <Text style={styles.bulletPoint}>• Conversas são completamente anônimas</Text>
-          <Text style={styles.bulletPoint}>• Não armazenamos histórico de mensagens</Text>
           <Text style={styles.bulletPoint}>• Você pode sair a qualquer momento</Text>
         </View>
 
@@ -74,7 +72,7 @@ export default function About() {
         <View style={styles.footer}>
           <Text style={styles.version}>Versão 1.0.0</Text>
           <Text style={styles.copyright}>
-            © 2024 MeetStranger. Feito com ❤️ para conectar pessoas.
+            © 2026 MeetStranger. Feito com ❤️ para conectar pessoas.
           </Text>
         </View>
       </View>

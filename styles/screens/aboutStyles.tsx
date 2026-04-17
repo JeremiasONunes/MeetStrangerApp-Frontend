@@ -5,10 +5,10 @@ import { StyleSheet } from 'react-native';
 import { Colors } from '../../constants/colors';
 
 // Importa tokens de espaçamento do design system
-import { Spacing } from '../../desing-system/tokens/spacing';
+import { Spacing } from '../../design-system/tokens/spacing';
 
 // Importa estilos tipográficos prontos
-import { TextStyles } from '../../desing-system/tokens/typography';
+import { TextStyles } from '../../design-system/tokens/typography';
 
 // Cria e exporta os estilos da tela "About"
 export const aboutStyles = StyleSheet.create({
@@ -37,7 +37,7 @@ export const aboutStyles = StyleSheet.create({
   // Título principal da tela
   title: {
     ...TextStyles.h1,              // Estilo de heading principal
-    color: Colors.textPrimary,     // Cor principal do texto
+    color: Colors.primary,     // Cor principal do texto
   },
 
   // Área de conteúdo
@@ -54,7 +54,7 @@ export const aboutStyles = StyleSheet.create({
   // Título de seção
   sectionTitle: {
     ...TextStyles.h3,              // Subtítulo (hierarquia menor que h1)
-    color: Colors.textPrimary,     // Cor principal
+    color: Colors.primary,     // Cor principal
     marginBottom: Spacing.md,      // Espaço abaixo do título
   },
 

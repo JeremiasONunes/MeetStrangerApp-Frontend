@@ -1,52 +1,78 @@
+// Importa utilitário de estilos
 import { StyleSheet } from 'react-native';
+
+// Importa cores do sistema
 import { Colors } from '../../constants/colors';
 
+// Importa tokens de espaçamento
+import { Spacing } from '../../design-system/tokens/spacing';
+
+// Importa tipografia padronizada
+import { TextStyles } from '../../design-system/tokens/typography';
+
+// Cria e exporta os estilos da tela de boas-vindas
 export const welcomeStyles = StyleSheet.create({
+
+  // Container principal da tela
   container: {
-    flex: 1,
-    backgroundColor: Colors.background,
-    paddingHorizontal: 20,
-    justifyContent: 'space-between',
+    flex: 1, // Ocupa toda a tela
+    backgroundColor: Colors.background, // Cor de fundo padrão
+    paddingHorizontal: Spacing.xl, //  padding lateral
+    justifyContent: 'space-between', // Distribui conteúdo (topo e base)
   },
+
+  // Área central (conteúdo principal)
   content: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: 8,
+    flex: 1, // Ocupa o espaço disponível
+    justifyContent: 'center', // Centraliza verticalmente
+    alignItems: 'center', // Centraliza horizontalmente
+    paddingHorizontal: Spacing.sm, //  pequeno respiro lateral
   },
+
+  // Logo do app
   logo: {
-    width: 240,
-    height: 240,
-    marginBottom: 24,
+    width: 240,  // Tamanho fixo 
+    height: 240, // Mantém proporção
+    marginBottom: Spacing.xl, //  espaço abaixo
   },
+
+  // Título principal
   title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: Colors.primary,
-    marginBottom: 12,
-    textAlign: 'center',
-    letterSpacing: -0.2,
-    lineHeight: 28,
+    ...TextStyles.h2,          // Tipografia de destaque 
+    fontWeight: 'bold',        // Ênfase
+    color: Colors.primary,     // Cor principal (branding)
+    marginBottom: Spacing.md,  // espaço abaixo
+    textAlign: 'center',       // Centraliza texto
+    letterSpacing: -0.2,       // Ajuste fino
+    lineHeight: 28,            
   },
+
+  // Subtítulo
   subtitle: {
-    fontSize: 15,
-    color: Colors.text,
-    textAlign: 'center',
-    marginBottom: 16,
-    lineHeight: 20,
+    ...TextStyles.body,        // Texto padrão
+    color: Colors.primary,     // Cor principal
+    textAlign: 'center',       // Centraliza
+    marginBottom: Spacing.lg,  // espaço abaixo
+    lineHeight: 20,            
   },
+
+  // Descrição adicional
   description: {
-    fontSize: 13,
-    color: Colors.textSecondary,
-    textAlign: 'center',
-    lineHeight: 18,
-    paddingHorizontal: 12,
+    ...TextStyles.small,       // Texto menor
+    color: Colors.textSecondary, // Cor secundária
+    textAlign: 'center',       // Centraliza
+    lineHeight: 18,            
+    paddingHorizontal: Spacing.md, // respiro lateral
   },
+
+  // Container dos botões
   buttons: {
-    paddingBottom: 60,
-    paddingHorizontal: 4,
+    paddingBottom: Spacing['4xl'], // espaço inferior (safe area)
+    paddingHorizontal: Spacing.xs, // ajuste lateral
   },
+
+  // Estilo individual de botão
   button: {
-    marginBottom: 12,
+    marginBottom: Spacing.sm, // espaço entre botões
   },
 });

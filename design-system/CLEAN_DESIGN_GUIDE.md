@@ -1,13 +1,13 @@
 # MeetStranger Clean Design System
 
 ## Overview
-A clean, simple design system using light blue tones for clarity and ease of use.
+Um design system limpo e simples, utilizando tons de azul claro para proporcionar clareza e facilidade de uso
 
 ## Design Principles
-- **Simplicity**: Clean, minimal interface
-- **Clarity**: High contrast and readability
-- **Light Blue Palette**: Calming, professional colors
-- **Consistency**: Unified spacing and typography
+- **Simplicity**: Interface limpa e minimalista
+- **Clarity**: Alto contraste e boa legibilidade
+- **Light Blue Palette**: Cores suaves e profissionais
+- **Consistency**: Espaçamento e tipografia padronizados
 
 ## Color System
 

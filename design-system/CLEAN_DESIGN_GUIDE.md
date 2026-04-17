@@ -12,105 +12,105 @@ Um design system limpo e simples, utilizando tons de azul claro para proporciona
 ## Color System
 
 ### Light Blue Palette
-- **Primary**: `#3B82F6` - Main blue for buttons and links
-- **Primary Light**: `#DBEAFE` - Light blue backgrounds
-- **Primary Dark**: `#1D4ED8` - Darker blue for hover states
-- **Secondary**: `#E0F2FE` - Very light blue accents
+- **Primary: `#3B82F6` – Azul principal para botões e links
+- **Primary Light: `#DBEAFE` – Fundos em azul claro
+- **Primary Dark: `#1D4ED8` – Azul mais escuro para estados de hover
+- **Secondary: `#E0F2FE` – Azul muito claro para detalhes
 
 ### Backgrounds
-- **Background**: `#FAFBFC` - Main app background
-- **Surface**: `#FFFFFF` - Cards and components
-- **Surface Elevated**: `#F8FAFC` - Elevated surfaces
+- **Background: `#FAFBFC` – Fundo principal da aplicação
+- **Surface: `#FFFFFF` – Cards e componentes
+- **Surface Elevated: `#F8FAFC` – Superfícies elevadas
 
 ### Text
-- **Text Primary**: `#1F2937` - Main text
-- **Text Secondary**: `#6B7280` - Supporting text
-- **Text Tertiary**: `#9CA3AF` - Subtle text
+- **Text Primary: `#1F2937` – Texto principal
+- **Text Secondary: `#6B7280` – Texto secundário
+- **Text Tertiary: `#9CA3AF` – Texto mais discreto
 
 ### Semantic Colors
-- **Success**: `#10B981` - Green for success states
-- **Error**: `#EF4444` - Red for errors
-- **Warning**: `#F59E0B` - Orange for warnings
+- **Success: `#10B981` – Verde para sucesso
+- **Error: `#EF4444` – Vermelho para erros
+- **Warning: `#F59E0B` – Laranja para alertas
 
 ## Typography
 
 ### Font Sizes
-- **xs**: 12px - Small labels
-- **sm**: 14px - Captions
-- **md**: 16px - Body text
-- **lg**: 18px - Titles
-- **xl**: 20px - Large titles
-- **2xl**: 24px - Section headers
-- **3xl**: 30px - Page titles
+- **xs**: 12px – Labels pequenos
+- **sm**: 14px – Legendas
+- **md**: 16px – Texto padrão
+- **lg**: 18px – Títulos
+- **xl**: 20px – Títulos maiores
+- **2xl**: 24px – Cabeçalhos de seção
+- **3xl**: 30px – Títulos de página
 
 ### Text Styles
-- **H1**: 30px, Bold - Main headings
-- **H2**: 24px, Bold - Section headings
-- **H3**: 20px, Semibold - Subsections
-- **Title**: 18px, Semibold - Component titles
-- **Body**: 16px, Regular - Main content
-- **Caption**: 14px, Regular - Supporting text
-- **Button**: 16px, Medium - Button text
+- **H1**: 30px, Bold – Títulos principais
+- **H2**: 24px, Bold – Títulos de seção
+- **H3**: 20px, Semibold – Subseções
+- **Title**: 18px, Semibold – Títulos de componentes
+- **Body**: 16px, Regular – Conteúdo principal
+- **Caption**: 14px, Regular – Texto auxiliar
+- **Button**: 16px, Medium – Texto de botões
 
 ## Spacing
 
 ### Scale
-- **xs**: 4px - Tight spacing
-- **sm**: 8px - Small gaps
-- **md**: 12px - Standard spacing
-- **lg**: 16px - Component padding
-- **xl**: 20px - Section spacing
-- **2xl**: 24px - Large gaps
-- **3xl**: 32px - Section margins
-- **4xl**: 48px - Page margins
+- **xs**: 4px - Espaçamento mínimo
+- **sm**: 8px - Espaços pequenos
+- **md**: 12px - Espaçamento padrão
+- **lg**: 16px - Padding de componentes
+- **xl**: 20px - Espaçamento de seções
+- **2xl**: 24px - Espaços maiores
+- **3xl**: 32px - Margens de seção
+- **4xl**: 48px - Margens de página
 
 ## Components
 
 ### Button
 ```typescript
-// Primary button
-<Button variant="primary">Continue</Button>
+// Botão primário
+<Button variant="primary">Continuar</Button>
 
-// Secondary button
-<Button variant="secondary">Cancel</Button>
+// Botão secundário
+<Button variant="secondary">Cancelar</Button>
 
-// Ghost button
-<Button variant="ghost">Skip</Button>
+// Botão ghost
+<Button variant="ghost">Pular</Button>
 ```
 
 ### Input
 ```typescript
 <Input 
   label="Email" 
-  placeholder="Enter your email"
+  placeholder="Digite seu email"
 />
 ```
 
 ### Chat Bubble
 ```typescript
 <ChatBubble 
-  message="Hello!"
+  message="Olá!"
   position="right"
-  timestamp="2:30 PM"
+  timestamp="14:30"
 />
 ```
 
 ## Usage Guidelines
 
 ### Screen Layout
-- Use consistent 16px padding
-- Maintain proper spacing between components
-- Keep backgrounds clean and minimal
+- Utilize padding consistente de 16px
+- Mantenha espaçamento adequado entre componentes
+- Prefira fundos limpos e minimalistas
 
 ### Color Usage
-- Use primary blue for main actions
-- Keep secondary colors subtle
-- Ensure good contrast for text
+- Utilize o azul principal para ações importantes
+- Mantenha cores secundárias sutis
+- Garanta bom contraste para leitura
 
 ### Typography
-- Use consistent text styles
-- Maintain proper hierarchy
-- Keep line heights readable
+- Utilize estilos de texto consistentes
+- Mantenha uma hierarquia clara
+- Use line-height adequado para leitura
 
 ## Implementation
 

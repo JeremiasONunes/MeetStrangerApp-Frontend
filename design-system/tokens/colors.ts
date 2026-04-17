@@ -114,4 +114,4 @@ export const darkTheme: ColorTokens = {
 };
 
 // Exporta o tema padrão da aplicação
-export const Colors = lightTheme;
+export const Colors = isDarkMode ? darkTheme : lightTheme;

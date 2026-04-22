@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextInput, View, Text, StyleSheet, TextInputProps } from 'react-native';
+import { TextInputProps } from 'react-native';
 import { Input as DSInput } from '../design-system';
 
 // Wrapper para manter compatibilidade com código existente
@@ -19,4 +19,3 @@ export function Input({ label, error, style, ...props }: InputProps) {
   );
 }
 
-const styles = StyleSheet.create({});

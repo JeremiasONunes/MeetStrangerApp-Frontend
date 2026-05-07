@@ -20,17 +20,14 @@ export default function Register() {
       Alert.alert('Erro', 'Preencha todos os campos');
       return;
     }
-
     if (password !== confirmPassword) {
       Alert.alert('Erro', 'As senhas não coincidem');
       return;
     }
-
     if (password.length < 6) {
       Alert.alert('Erro', 'A senha deve ter pelo menos 6 caracteres');
       return;
     }
-
     setLoading(true);
     try {
       const success = await register(username, email, password);

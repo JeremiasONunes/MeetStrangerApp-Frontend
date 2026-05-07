@@ -3,7 +3,6 @@ export interface User {
   username: string;
   email: string;
 }
-
 export interface ChatMessage {
   id: string;
   text: string;
@@ -11,7 +10,6 @@ export interface ChatMessage {
   timestamp: Date;
   username: string;
 }
-
 export interface ChatCategory {
   id: string;
   name: string;

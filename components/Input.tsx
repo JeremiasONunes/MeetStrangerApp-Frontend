@@ -2,7 +2,7 @@ import React from 'react';
 import { TextInputProps } from 'react-native';
 import { Input as DSInput } from '../design-system';
 
-// Wrapper para manter compatibilidade com código existente
+
 interface InputProps extends TextInputProps {
   label?: string;
   error?: string;

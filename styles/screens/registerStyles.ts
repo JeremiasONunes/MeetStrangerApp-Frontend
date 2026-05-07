@@ -1,24 +1,18 @@
 // Importa utilitário de estilos
 import { StyleSheet } from 'react-native';
-
 // Importa cores do sistema
 import { Colors } from '../../constants/colors';
-
 // Importa tokens de espaçamento e sombras
 import { Shadows, Spacing } from '../../design-system/tokens/spacing';
-
 // Importa tipografia padronizada
 import { TextStyles } from '../../design-system/tokens/typography';
-
 // Cria e exporta os estilos da tela de Registro
 export const registerStyles = StyleSheet.create({
-
   // Container principal da tela
   container: {
     flex: 1, // Ocupa toda a tela
     backgroundColor: Colors.background, // Cor padrão do app
   },
-
   // Área central de conteúdo
   content: {
     flex: 1, // Ocupa espaço disponível
@@ -27,7 +21,6 @@ export const registerStyles = StyleSheet.create({
     alignItems: 'center', // Centraliza horizontalmente
     marginBottom: Spacing['4xl'], // antes: 60 → espaço inferior (safe area)
   },
-
   // Logo do app
   logo: {
     width: 120,  // Tamanho fixo (mantido)
@@ -36,12 +29,10 @@ export const registerStyles = StyleSheet.create({
     ...Shadows.xl, // antes: shadow manual → padronizado
     shadowColor: Colors.primaryDark // substitui '#1E3A8A' por token coerente
   },
-
   // Container dos inputs
   inputContainer: {
     width: '100%', // Ocupa toda largura disponível
   },
-
   // Título principal
   title: {
     ...TextStyles.title, // Tipografia base
@@ -52,7 +43,6 @@ export const registerStyles = StyleSheet.create({
     lineHeight: 26, // Mantido para não quebrar layout
     textAlign: 'center', // Centraliza texto
   },
-
   // Subtítulo
   subtitle: {
     ...TextStyles.body, // Texto padrão
@@ -61,7 +51,6 @@ export const registerStyles = StyleSheet.create({
     lineHeight: 22, // Mantido
     textAlign: 'center', // Centraliza
   },
-
   // Botão de registro
   registerButton: {
     marginBottom: Spacing.sm, // espaço abaixo

@@ -48,7 +48,6 @@ export default function Login() {
         />
         <Text style={styles.title}>Entrar</Text>
         <Text style={styles.subtitle}>Acesse sua conta no MeetStranger</Text>
-
         <View style={styles.inputContainer}>
           <Input
             label="Email"
@@ -58,7 +57,6 @@ export default function Login() {
             autoCapitalize="none"
             placeholder="seu@email.com"
           />
-
           <Input
             label="Senha"
             value={password}
@@ -67,14 +65,12 @@ export default function Login() {
             placeholder="Sua senha"
           />
         </View>
-
         <Button
           title={loading ? "Entrando..." : "Entrar"}
           onPress={handleLogin}
           disabled={loading}
           style={styles.loginButton}
         />
-
         <Button
           title="Criar nova conta"
           onPress={() => router.push('/auth/register')}
